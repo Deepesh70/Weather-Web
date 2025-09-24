@@ -40,12 +40,11 @@ A simple weather application that displays the current weather conditions for a 
     npm install
     ```
 
-3. **.env file** 
-     #Create a copy of the example environment file:
+3. **Create a copy of the example environment file:** 
         ```bash
         cp .env.example .env
        ```
-      # Open the new `.env` file and add your OpenWeatherMap API key.
+    **Open the new `.env` file and add your OpenWeatherMap API key.**
 
 4.  **Install client dependencies:**
     ```bash
