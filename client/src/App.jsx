@@ -1,7 +1,5 @@
 import { useState } from 'react';
-// Tip: You can use an icon library like 'react-icons' for a better UI
-// import { FiSearch } from 'react-icons/fi';
-// import { WiHumidity, WiStrongWind } from 'react-icons/wi';
+
 
 
 function App() {
@@ -19,7 +17,7 @@ function App() {
     setError(null);
 
     try {
-      // Remember to replace this with your actual backend endpoint
+      
       const response = await fetch(`http://localhost:5000/api/weather?city=${city}`);
       const data = await response.json();
 
@@ -54,7 +52,7 @@ function App() {
             type="submit"
             className="bg-blue-600 hover:bg-blue-700 text-white font-bold p-3 rounded-r-lg transition-all duration-300 transform hover:scale-105 active:scale-95 flex items-center justify-center"
           >
-            {/* <FiSearch /> You could add an icon here */}
+       
             <span>Search</span>
           </button>
         </form>
@@ -88,12 +86,12 @@ function App() {
 
             <div className="grid grid-cols-2 gap-4 text-lg">
               <div className="bg-white/10 p-4 rounded-lg flex flex-col items-center">
-                {/* <WiHumidity size={30} /> You could add an icon here */}
+            
                 <p className="font-semibold">{weather.main.humidity}%</p>
                 <p className="text-sm opacity-80 mt-1">Humidity</p>
               </div>
               <div className="bg-white/10 p-4 rounded-lg flex flex-col items-center">
-                {/* <WiStrongWind size={30} /> You could add an icon here */}
+            
                 <p className="font-semibold">{weather.wind.speed} m/s</p>
                 <p className="text-sm opacity-80 mt-1">Wind Speed</p>
               </div>
