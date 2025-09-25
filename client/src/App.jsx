@@ -1,6 +1,6 @@
 import { useState } from 'react';
-
-
+import { FiSearch } from 'react-icons/fi';
+import { WiHumidity, WiStrongWind } from 'react-icons/wi';
 
 function App() {
   const [city, setCity] = useState('');
@@ -17,7 +17,7 @@ function App() {
     setError(null);
 
     try {
-      
+     
       const response = await fetch(`http://localhost:5000/api/weather?city=${city}`);
       const data = await response.json();
 
@@ -50,10 +50,10 @@ function App() {
           />
           <button
             type="submit"
-            className="bg-blue-600 hover:bg-blue-700 text-white font-bold p-3 rounded-r-lg transition-all duration-300 transform hover:scale-105 active:scale-95 flex items-center justify-center"
+            className="bg-blue-600 hover:bg-blue-700 text-white font-bold p-3 rounded-r-lg transition-all duration-300 transform hover:scale-105 active:scale-95 flex items-center justify-center w-14"
           >
-       
-            <span>Search</span>
+        
+            <FiSearch size={22} />
           </button>
         </form>
 
@@ -86,14 +86,15 @@ function App() {
 
             <div className="grid grid-cols-2 gap-4 text-lg">
               <div className="bg-white/10 p-4 rounded-lg flex flex-col items-center">
-            
-                <p className="font-semibold">{weather.main.humidity}%</p>
-                <p className="text-sm opacity-80 mt-1">Humidity</p>
+
+                <WiHumidity size={40} className="opacity-80"/>
+                <p className="font-semibold mt-1">{weather.main.humidity}%</p>
+                <p className="text-sm opacity-80">Humidity</p>
               </div>
               <div className="bg-white/10 p-4 rounded-lg flex flex-col items-center">
-            
-                <p className="font-semibold">{weather.wind.speed} m/s</p>
-                <p className="text-sm opacity-80 mt-1">Wind Speed</p>
+                <WiStrongWind size={40} className="opacity-80"/>
+                <p className="font-semibold mt-1">{weather.wind.speed} m/s</p>
+                <p className="text-sm opacity-80">Wind Speed</p>
               </div>
             </div>
           </div>
